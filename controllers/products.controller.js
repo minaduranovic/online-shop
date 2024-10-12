@@ -8,14 +8,14 @@ async function getAllProducts(req, res, next) {
     next(error);
   }
 }
-async function getProductDetails(req, res, next){
-    try{
+
+async function getProductDetails(req, res, next) {
+  try {
     const product = await Product.findById(req.params.id);
-    res.render('customer/products/product-details', {product: product});
-    }
-    catch(error){
-        next(error);
-    }
+    res.render('customer/products/product-details', { product: product });
+  } catch (error) {
+    next(error);
+  }
 }
 
 module.exports = {
